@@ -9,11 +9,12 @@ const Row = (props) => {
       { squares.map((square, index ) => {
           return(
             <Square
-              className="square"
-              key={`${square[index]}-${index}`}
-              squareID={`${props.rowID} ${square[index]}`}
-              nextTic={props.nextTic}
+              className={`square ${squares[props.rowID - 1][index]}`}
+              key={`${squares[props.rowID - 1][index]}`}
+              rowID={`${props.rowID}`}
+              squareID={`${squares[props.rowID - 1][index]}`}
               clickedSquare={props.clickedSquare}
+              squareVal={props.squareVal[squares[props.rowID - 1][index] - 1]}
             />
           )
         })

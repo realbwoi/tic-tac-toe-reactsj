@@ -11,10 +11,10 @@ const Board = (props) => {
           <Row
             className="row"
             key={rows[index] + 1}
-            nextTic={props.nextTic}
-            rowID={row}
+            rowID={row + 1}
             squareInd={props.squareInd}
             clickedSquare={props.clickedSquare}
+            squareVal={props.squareVal}
           />
         )
       })}
