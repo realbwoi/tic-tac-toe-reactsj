@@ -1,11 +1,12 @@
 import React from 'react';
 import Row from './Row';
+import '../styles/Board.css';
 
 const Board = (props) => {
   const rows = [...props.rowInd];
 
   return (
-    <div>
+    <div className="Board">
       {rows.map((row, index) => {
         return (
           <Row

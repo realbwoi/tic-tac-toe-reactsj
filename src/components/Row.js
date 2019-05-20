@@ -1,11 +1,12 @@
 import React from 'react';
 import Square from './Square';
+import '../styles/Row.css';
 
 const Row = (props) => {
   const squares = [...props.squareInd];
 
   return(
-    <div>
+    <div className="row">
       { squares.map((square, index ) => {
           return(
             <Square
