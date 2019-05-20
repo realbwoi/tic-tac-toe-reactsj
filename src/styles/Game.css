@@ -1,0 +1,9 @@
+.Game {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 98vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

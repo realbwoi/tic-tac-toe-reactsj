@@ -10,9 +10,10 @@ class Square extends React.Component {
     const { isFilled  } = this.state;
     const key = parseInt(this.props.squareID) - 1;
 
-
-    if (!isFilled) {
-      this.setState({ isFilled: true })
+    if (isFilled === true && this.props.squareVal === null) {
+      this.props.clickedSquare(key);
+    } else if (!isFilled) {
+      this.setState({ isFilled: !isFilled })
       this.props.clickedSquare(key);
     }
   }
@@ -22,7 +23,7 @@ class Square extends React.Component {
       <button
         className='square'
         onClick={this.onClickedSquare}
-        disabled={this.state.isFilled}
+        disabled={this.props.squareVal === null? false:true}
       >
         {this.props.squareVal}
       </button>

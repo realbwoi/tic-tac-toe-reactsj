@@ -1,6 +1,7 @@
 import React from 'react';
 import Board from './components/Board';
 import Modal from './components/Modal';
+import NextPlayer from './components/NextPlayer';
 import './styles/Game.css';
 
 class Game extends React.Component {
@@ -47,12 +48,12 @@ class Game extends React.Component {
       const [x, y, z] = possibilites[i];
       if (squareVal[x] && squareVal[x] === squareVal[y] && squareVal[x] === squareVal[z]) {
         this.setState({ isGameComplete: squareVal[x], show: true });
-
-        alert(`Player '${this.state.isGameComplete.toUpperCase()}' wins!`);
         return;
-      } else if (squareVal[x] !== squareVal[y] && squareVal[x] !== squareVal[z] && !squareVal.includes(null)) {
-        alert('DRAW!');
+      } else if (!squareVal.includes(null) && !squareVal[x] && squareVal[x] !== squareVal[y] && squareVal[x] !== squareVal[z]) {
+        this.setState({ isGameComplete: 'Draw', show: true });
         return;
+      } else if (!squareVal.includes(null)) {
+        this.setState({ isGameComplete: 'Draw', show: true });
       }
     }
 
@@ -60,16 +61,24 @@ class Game extends React.Component {
   }
 
 
+  // Restarts Game
+  newGame = () => {
+    this.setState({ squareVal: Array(9).fill(null), isGameComplete: '', show: false, xNextTic: true });
+  }
+
+
 
   render() {
     return (
       <div className="Game">
-        <Modal />
+        {this.state.isGameComplete !== ''?<Modal isGameComplete={this.state.isGameComplete} show={this.state.show} newGame={this.newGame} />:null}
+        <NextPlayer xNextTic={this.state.xNextTic} />
         <Board
           rowInd={this.state.rowInd}
           clickedSquare={this.clickedSquare}
           squareInd={this.state.squareInd}
           squareVal={this.state.squareVal}
+          isGameComplete={this.state.isGameComplete}
         />
       </div>
     );

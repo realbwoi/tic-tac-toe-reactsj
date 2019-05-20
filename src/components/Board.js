@@ -6,7 +6,7 @@ const Board = (props) => {
   const rows = [...props.rowInd];
 
   return (
-    <div className="Board">
+    <div className={`Board${props.isGameComplete!==''?'-disable':''}`}>
       {rows.map((row, index) => {
         return (
           <Row

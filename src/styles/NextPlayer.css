@@ -1,0 +1,11 @@
+.next-player--container {
+  font-family: sans-serif;
+  font-size: 24px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #00b4db;
+}
+
+.next-player--text {
+  color: rgb(236, 141, 86);
+}
