@@ -12,7 +12,7 @@ This is my take on the classic game Tic-Tac-Toe built in react!
 - [x] Use React
 - [x] Update the UI using CSS or similar framework.
 - [x] Add a restart game button
-- [] Support a NxN board
+- [ ] Support a NxN board
 - [x] Any additional features of my choosing
 
 ## Challenges
