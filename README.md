@@ -8,7 +8,7 @@ This is my take on the classic game Tic-Tac-Toe built in react!
 - [x] Each click should alternate between Xs and Os, starting with X.
 - [x] When a player wins or there is a draw, notify the user.
 
-#### Extras
+### Extras
 - [x] Use React
 - [x] Update the UI using CSS or similar framework.
 - [x] Add a restart game button
